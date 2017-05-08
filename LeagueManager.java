@@ -125,8 +125,10 @@ public class LeagueManager {
     
     System.out.printf("There are %d players in the team. Which one do you want to remove?%n", team.getPlayers().size());
     Player player = (Player) presentWithOptions(team.getPlayers());
-    if (team.removePlayer(player))
-       System.out.printf("%s. It consists of %d players now%n", team, team.getSize());
+    if (team.removePlayer(player)) {
+       System.out.printf("%s. It consists of %d players now.%n", team, team.getSize());
+       availablePlayers.add(player);
+    }
     
   }
   
